@@ -1,0 +1,10 @@
+dependencies {
+    testImplementation "junit:junit:$junit_version"
+    testImplementation "io.mockk:mockk:$mockk_version"
+    testImplementation "android.arch.core:core-testing:$core_testing_version"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+
+    androidTestImplementation "androidx.test.ext:junit:$junit_ui_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+}

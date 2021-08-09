@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    android:animateLayoutChanges="true"
+    app:cardBackgroundColor="@color/cardview_dark_background"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="8dp">
+
+    <include
+        android:id="@+id/planet_error"
+        android:visibility="gone"
+        layout="@layout/error_layout"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/planet_info_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/planet_info_icon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_margin="@dimen/margin_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_public_24" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/planet_info_title"
+            style="@style/detail_info_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:text="@string/planet_title"
+            app:layout_constraintBottom_toBottomOf="@+id/planet_info_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/planet_info_icon"
+            app:layout_constraintTop_toTopOf="@+id/planet_info_icon" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/planet_info_name"
+            style="@style/view_holder_film_item_body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:text="@string/character_info_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/planet_info_icon" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/planet_info_population"
+            style="@style/view_holder_film_item_body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:text="@string/planet_population"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/planet_info_name"
+            app:layout_constraintTop_toBottomOf="@+id/planet_info_name" />
+
+        <ProgressBar
+            android:id="@+id/planet_loading"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/star_wars_yellow"
+            android:indeterminateTintMode="src_atop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/planet_info_icon" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/planet_group"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:constraint_referenced_ids="planet_info_name,planet_info_population" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

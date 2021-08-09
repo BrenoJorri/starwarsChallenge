@@ -1,0 +1,10 @@
+include ':libraries:test'
+include ':libraries:data'
+include ':libraries:domain'
+include ':libraries:core'
+include ':data'
+include ':domain'
+include ':characterDetail'
+include ':search'
+include ':app'
+rootProject.name = "Trivago Challenge"

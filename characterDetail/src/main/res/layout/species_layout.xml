@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/margin_medium"
+    app:cardBackgroundColor="@color/cardview_dark_background"
+    app:cardCornerRadius="8dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <include
+        android:id="@+id/species_error"
+        android:visibility="gone"
+        layout="@layout/error_layout"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/species_info_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/species_info_icon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_margin="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_face_24" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/species_info_title"
+            style="@style/detail_info_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/species_title"
+            android:layout_marginStart="@dimen/margin_medium"
+            app:layout_constraintBottom_toBottomOf="@+id/species_info_icon"
+            app:layout_constraintStart_toEndOf="@+id/species_info_icon"
+            app:layout_constraintTop_toTopOf="@+id/species_info_icon" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/species_info_empty"
+            style="@style/detail_info_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/species_empty"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:visibility="gone"
+            android:layout_marginBottom="@dimen/margin_medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/species_info_icon"
+            app:layout_constraintTop_toBottomOf="@+id/species_info_icon" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_species"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:scrollbars="horizontal"
+            android:scrollbarStyle="outsideInset"
+            android:scrollbarThumbHorizontal="@color/white"
+            android:clipToPadding="false"
+            android:padding="12dp"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/species_info_icon"
+            tools:listitem="@layout/item_species" />
+
+
+        <ProgressBar
+            android:id="@+id/species_loading"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/star_wars_yellow"
+            android:indeterminateTintMode="src_atop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/species_info_icon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="species_title">Species</string>
+    <string name="planet_title">Planet</string>
+    <string name="character_info_title">Character Info</string>
+    <string name="films_title">Films</string>
+    <string name="character_info_name">Name: %1$s</string>
+    <string name="planet_population">Population: %1$s</string>
+    <string name="species_language">Language: %1$s</string>
+    <string name="character_info_height">Height: %1$s cm / %2$s inches</string>
+    <string name="character_info_birthyear">BirthYear: %1$s</string>
+    <string name="error_message">Something Wrong Occurs Try Again Later</string>
+    <string name="species_empty">No Species Found</string>
+</resources>

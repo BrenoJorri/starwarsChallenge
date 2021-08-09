@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_medium"
+    app:cardBackgroundColor="@color/cardview_dark_background"
+    app:cardCornerRadius="8dp">
+
+    <include
+        android:id="@+id/films_error"
+        layout="@layout/error_layout"
+        android:visibility="gone" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/films_info_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/films_info_icon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_margin="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_local_movies_24" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/films_info_title"
+            style="@style/detail_info_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:text="@string/films_title"
+            android:textColor="@color/star_wars_yellow"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/films_info_icon"
+            app:layout_constraintStart_toEndOf="@+id/films_info_icon"
+            app:layout_constraintTop_toTopOf="@+id/films_info_icon" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_films"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:scrollbarStyle="outsideInset"
+            android:scrollbarThumbHorizontal="@color/white"
+            android:scrollbars="horizontal"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/films_info_icon"
+            tools:listitem="@layout/item_films" />
+
+        <ProgressBar
+            android:id="@+id/film_loading"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/star_wars_yellow"
+            android:indeterminateTintMode="src_atop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/films_info_icon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

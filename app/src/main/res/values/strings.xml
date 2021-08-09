@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Trivago Challenge</string>
+    <string name="title_search">Search</string>
+    <string name="title_characterdetail">Module Title</string>
+</resources>
