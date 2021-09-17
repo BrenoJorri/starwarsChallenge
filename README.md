@@ -1,4 +1,4 @@
-# Trivago Challenge
+# Challenge
 ## Techonologies
 
 - Kotlin
